@@ -35,7 +35,7 @@ ${featuredSeries && featuredEntry
   </div>
 
   <a class="featured__plate" href="${path(`/series/${featuredSeries.slug}/${featuredEntry.slug}/`)}" tabindex="-1" aria-hidden="true">
-    ${figure(featuredEntry.hero, { assetExists: ctx.assetExists, layout: "bleed", eager: true })}
+    ${figure(featuredEntry.hero, { ctx, layout: "bleed", eager: true })}
   </a>
 
   <div class="featured__foot">

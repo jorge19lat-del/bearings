@@ -18,6 +18,7 @@ import { seriesIndexPage } from "./src/pages/series-index.mjs";
 import { seriesPage } from "./src/pages/series.mjs";
 import { entryPage } from "./src/pages/entry.mjs";
 import { aboutPage } from "./src/pages/about.mjs";
+import { notFoundPage } from "./src/pages/notfound.mjs";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const dirs = {
@@ -60,9 +61,13 @@ const build = async () => {
   const orphans = allEntries.filter((e) => !allSeries.some((s) => s.slug === e.series));
   orphans.forEach((e) => console.warn(`  ! entry "${e.slug}" refers to unknown series "${e.series}" — skipped`));
 
-  const base = site.basePath || "";
+  // BASE_PATH lets a deployment override the content (GitHub Pages serves this
+  // site from /<repo>/, not from a domain root).
+  const base = (process.env.BASE_PATH ?? site.basePath ?? "").replace(/\/$/, "");
+  const prefix = (href) => (href.startsWith("/") ? base + href : href);
   const ctx = {
-    path: (href) => (href.startsWith("/") ? base + href : href),
+    path: prefix,
+    asset: prefix,
     assetExists: (src) => Boolean(src) && existsSync(path.join(dirs.public, src.replace(/^\//, ""))),
   };
 
@@ -76,6 +81,7 @@ const build = async () => {
       "/",
       layout({
         site,
+        ctx,
         url: "/",
         title: null,
         description: site.description,
@@ -90,6 +96,7 @@ const build = async () => {
       "/series/",
       layout({
         site,
+        ctx,
         url: "/series/",
         title: "Series",
         description: site.seriesIndex.standfirst,
@@ -104,6 +111,7 @@ const build = async () => {
       "/about/",
       layout({
         site,
+        ctx,
         url: "/about/",
         title: "About",
         description: site.about.standfirst,
@@ -119,6 +127,7 @@ const build = async () => {
         `/series/${s.slug}/`,
         layout({
           site,
+          ctx,
           url: `/series/${s.slug}/`,
           title: s.name,
           description: `${s.subtitle} ${s.standfirst || ""}`.trim(),
@@ -134,6 +143,7 @@ const build = async () => {
           `/series/${s.slug}/${entry.slug}/`,
           layout({
             site,
+            ctx,
             url: `/series/${s.slug}/${entry.slug}/`,
             title: `${s.name} · ${entry.number} — ${entry.title}`,
             description: entry.standfirst,
@@ -151,12 +161,29 @@ const build = async () => {
     }
   }
 
+  // GitHub Pages (and most static hosts) serve this for unknown paths.
+  await writeFile(
+    path.join(dirs.dist, "404.html"),
+    layout({
+      site,
+      ctx,
+      url: "/404",
+      title: "Off the map",
+      description: "Page not found.",
+      bodyClass: "is-notfound",
+      content: notFoundPage({ ctx }),
+    }).trim() + "\n",
+    "utf8"
+  );
+
   // Styles, scripts, photography.
   await cp(path.join(dirs.src, "styles"), path.join(dirs.dist, "styles"), { recursive: true });
   await cp(path.join(dirs.src, "scripts"), path.join(dirs.dist, "scripts"), { recursive: true });
   if (existsSync(dirs.public)) await cp(dirs.public, dirs.dist, { recursive: true });
+  // Tell GitHub Pages to serve the files as they are, without running Jekyll.
+  await writeFile(path.join(dirs.dist, ".nojekyll"), "", "utf8");
 
-  console.log(`BEARINGS — built ${routes.length} pages`);
+  console.log(`BEARINGS — built ${routes.length} pages${base ? ` under ${base}/` : ""}`);
   routes.forEach((r) => console.log(`  ${r}`));
   const missing = [];
   for (const s of series) {

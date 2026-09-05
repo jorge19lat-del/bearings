@@ -2,9 +2,8 @@ import { esc, html } from "./util.mjs";
 
 const isCurrent = (href, url) => (href === "/" ? url === "/" : url.startsWith(href));
 
-export const layout = ({ site, url, title, description, bodyClass = "", head = "", content }) => {
-  const base = site.basePath || "";
-  const path = (href) => (href.startsWith("/") ? base + href : href);
+export const layout = ({ site, ctx, url, title, description, bodyClass = "", head = "", content }) => {
+  const path = ctx.path;
   const pageTitle = title ? `${title} — ${site.title}` : `${site.title} — ${site.tagline}`;
 
   return html`<!doctype html>

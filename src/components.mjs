@@ -7,14 +7,14 @@ const RATIOS = { "3x2": "3 / 2", "4x5": "4 / 5", "1x1": "1 / 1", "16x9": "16 / 9
  * held open at the correct ratio with its brief, so layout and rhythm survive the
  * absence of the picture. Replace the file, and the picture simply appears.
  */
-export const figure = (image, { assetExists, layout = "wide", eager = false, sizes } = {}) => {
+export const figure = (image, { ctx, layout = "wide", eager = false, sizes } = {}) => {
   if (!image) return "";
   const cls = ["figure", `figure--${layout}`].join(" ");
   const ratio = RATIOS[image.ratio] || RATIOS["3x2"];
   const tone = Number.isInteger(image.tone) ? image.tone : 3;
-  const present = image.src && assetExists && assetExists(image.src);
+  const present = image.src && ctx && ctx.assetExists(image.src);
   const media = present
-    ? `<img src="${esc(image.src)}" alt="${esc(image.alt || "")}" loading="${eager ? "eager" : "lazy"}" decoding="async"${sizes ? ` sizes="${esc(sizes)}"` : ""}>`
+    ? `<img src="${esc(ctx.asset(image.src))}" alt="${esc(image.alt || "")}" loading="${eager ? "eager" : "lazy"}" decoding="async"${sizes ? ` sizes="${esc(sizes)}"` : ""}>`
     : html`<div class="plate" role="img" aria-label="${esc(image.alt || image.note || "Photograph")}" data-tone="${tone}">
         <span class="plate__meta">${esc(image.note || image.alt || "Photograph")}</span>
       </div>`;

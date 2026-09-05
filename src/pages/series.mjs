@@ -36,7 +36,7 @@ ${entries.length
             <span class="link link--quiet">Read the entry</span>
           </div>
           <div class="entry-row__plate">
-            ${figure(entry.hero, { assetExists: ctx.assetExists, layout: i === 0 ? "lead" : "row", eager: i === 0 })}
+            ${figure(entry.hero, { ctx, layout: i === 0 ? "lead" : "row", eager: i === 0 })}
           </div>
         </a>
       </article>`

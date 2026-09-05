@@ -16,7 +16,7 @@ export const entryPage = ({ site, series, entry, neighbours, ctx }) => {
     <p class="entry-head__standfirst">${esc(entry.standfirst)}</p>
   </header>
 
-  ${figure(entry.hero, { assetExists: ctx.assetExists, layout: "bleed", eager: true })}
+  ${figure(entry.hero, { ctx, layout: "bleed", eager: true })}
 
   <div class="entry-intro">
     <div class="entry-intro__text prose">${(entry.introduction || []).map((p) => `<p>${esc(p)}</p>`)}</div>

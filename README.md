@@ -24,10 +24,27 @@ npm run serve     # preview /dist at http://localhost:4321
 npm run dev       # both
 ```
 
-`/dist` is generated and is not committed. It can be deployed as-is to any static
-host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, a folder on a server).
+`/dist` is generated and is not committed — it is built on publish.
 
-If the site is served from a sub-folder rather than a domain root, set
+---
+
+## Publishing
+
+`.github/workflows/pages.yml` builds the site and publishes it to GitHub Pages on
+every push. It needs one setting, once:
+
+> **Settings → Pages → Build and deployment → Source: GitHub Actions**
+
+Without that, GitHub serves the repository's files directly and a visitor sees this
+README rather than the site.
+
+The workflow asks GitHub Pages where the site will live and builds it for that
+address, so it works both at a domain root and at `…github.io/bearings/`. Nothing
+in the content needs to change if a custom domain is added later.
+
+To publish anywhere else (Netlify, Vercel, Cloudflare Pages, a folder on a server),
+run `npm run build` and upload `/dist`. If that host serves the site from a
+sub-folder, build with `BASE_PATH=/sub-folder npm run build`, or set
 `"basePath": "/sub-folder"` in `content/site.json`.
 
 ---

@@ -37,7 +37,7 @@ export const seriesIndexPage = ({ site, series, ctx }) => {
     </div>
     <div class="index__plate">
       <a href="${path(`/series/${s.slug}/`)}" tabindex="-1" aria-hidden="true">
-        ${figure(s.cover, { assetExists: ctx.assetExists, layout: "index" })}
+        ${figure(s.cover, { ctx, layout: "index" })}
       </a>
     </div>
   </article>`

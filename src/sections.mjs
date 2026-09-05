@@ -19,7 +19,7 @@ const storyBlocks = {
       <p>${esc(b.text)}</p>
       ${b.attribution ? `<cite>${esc(b.attribution)}</cite>` : ""}
     </blockquote>`,
-  figure: (b, ctx) => figure(b, { assetExists: ctx.assetExists, layout: b.layout || "wide" }),
+  figure: (b, ctx) => figure(b, { ctx, layout: b.layout || "wide" }),
 };
 
 const renderStoryBlock = (block, ctx) => {
@@ -68,10 +68,10 @@ export const SECTION_TYPES = {
           while (i < items.length && items[i].layout === "pair") group.push(items[i++]);
           i -= 1;
           out.push(
-            html`<div class="plates-pair">${group.map((g) => figure(g, { assetExists: ctx.assetExists, layout: "pair" }))}</div>`
+            html`<div class="plates-pair">${group.map((g) => figure(g, { ctx, layout: "pair" }))}</div>`
           );
         } else {
-          out.push(figure(item, { assetExists: ctx.assetExists, layout: item.layout || "wide" }));
+          out.push(figure(item, { ctx, layout: item.layout || "wide" }));
         }
       }
       return `<div class="plates">${out.join("\n")}</div>`;
@@ -109,14 +109,14 @@ export const SECTION_TYPES = {
 
   voice: {
     label: "The Voice",
-    render: (section) => html`<div class="voice">
+    render: (section, ctx) => html`<div class="voice">
         ${(section.items || []).map(
           (item) => html`<article class="voice__track">
               <div class="voice__head">
                 <h3>${esc(item.title || "Recording")}</h3>
                 ${item.duration ? `<p class="voice__duration">${esc(item.duration)}</p>` : ""}
               </div>
-              ${item.src ? `<audio controls preload="none" src="${esc(item.src)}"></audio>` : ""}
+              ${item.src ? `<audio controls preload="none" src="${esc(ctx.asset(item.src))}"></audio>` : ""}
               ${item.note ? `<p class="voice__note">${esc(item.note)}</p>` : ""}
               ${item.transcript ? `<div class="voice__transcript prose">${item.transcript.map((p) => `<p>${esc(p)}</p>`).join("")}</div>` : ""}
             </article>`
@@ -147,7 +147,7 @@ const renderMotion = (item, ctx, kind = "video") => {
   } else if (item.provider === "youtube" && item.id) {
     media = `<iframe src="https://www.youtube-nocookie.com/embed/${esc(item.id)}?rel=0" title="${esc(item.title || "Video")}" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>`;
   } else if (item.src) {
-    media = `<video controls preload="none"${item.poster ? ` poster="${esc(item.poster)}"` : ""} src="${esc(item.src)}"></video>`;
+    media = `<video controls preload="none"${item.poster ? ` poster="${esc(ctx.asset(item.poster))}"` : ""} src="${esc(ctx.asset(item.src))}"></video>`;
   } else {
     media = `<div class="plate" role="img" aria-label="${esc(item.title || "Video")}" data-tone="6"><span class="plate__meta">${esc(item.note || item.title || "Video")}</span></div>`;
   }
