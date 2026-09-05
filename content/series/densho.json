@@ -1,0 +1,38 @@
+{
+  "slug": "densho",
+  "name": "DENSHŌ",
+  "subtitle": "Stories of craftsmanship.",
+  "meaning": "伝承 — the handing down of something, from one pair of hands to the next.",
+  "status": "Ongoing",
+  "began": "2025",
+  "order": 1,
+  "standfirst": "People who have given their lives to making, and the worlds that have grown around their work.",
+  "introduction": [
+    "DENSHŌ follows people who dedicate themselves to craft — to a material, a technique, a discipline that takes decades to learn and a lifetime to keep. Some of them work in traditions older than the countries they live in. Some are the last to hold a particular piece of knowledge. Most of them do not think of themselves as remarkable.",
+    "The series is less interested in objects than in the lives around them: the hours, the rooms, the families, the compromises, the reasons someone chooses to keep doing something the slow way in a world that has stopped asking for it. What is being handed down is rarely just a skill. It is a way of paying attention.",
+    "Each entry follows one place and the people met there. The numbering runs within the series, in the order the work was made."
+  ],
+  "cover": {
+    "src": "/images/densho/cover.jpg",
+    "alt": "A pair of hands resting on the rim of an unfinished bronze gong.",
+    "tone": 3,
+    "ratio": "4x5",
+    "note": "Series cover — hands on unfinished bronze"
+  },
+  "forthcoming": [
+    {
+      "number": "002",
+      "title": "Córdoba",
+      "location": "Andalusia, Spain",
+      "note": "Leatherwork, and a workshop that has outlived three languages.",
+      "status": "In progress"
+    },
+    {
+      "number": "003",
+      "title": "Untitled",
+      "location": "—",
+      "note": "In preparation.",
+      "status": "Planned"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "slug": "001-indonesia",
+  "series": "densho",
+  "number": "001",
+  "title": "Indonesia",
+  "location": "Surakarta, Central Java",
+  "dateline": "March 2025",
+  "duration": "Eleven days",
+  "subjects": "Gong smiths, batik makers, a family workshop",
+  "_note": "Sample editorial copy, written to demonstrate the entry structure. Replace with your own reporting.",
+  "standfirst": "A family foundry on the south side of Solo has been making gongs for four generations. The work is loud, hot, imprecise by every modern measure, and almost impossible to learn.",
+  "introduction": [
+    "Eleven days in Central Java with the people who make the instruments of the gamelan — and with the families whose lives have been arranged, for a century, around a fire that has to be lit before dawn."
+  ],
+  "hero": {
+    "src": "/images/densho/001-indonesia/hero.jpg",
+    "alt": "Four men lifting a glowing disc of bronze from the coals with iron tongs.",
+    "tone": 5,
+    "ratio": "3x2",
+    "caption": "The fourth heat of the morning. Semanggi, Surakarta."
+  },
+  "credits": [
+    { "label": "Words & photographs", "value": "BEARINGS" },
+    { "label": "With", "value": "The Pawiro family" },
+    { "label": "Translation", "value": "Ratna Dewi" }
+  ],
+  "sections": [
+    {
+      "type": "story",
+      "blocks": [
+        { "type": "lead", "text": "The forge opens at four in the morning, because bronze can only be read by eye, and after sunrise the light in the doorway is too strong to read anything at all." },
+        { "type": "paragraph", "text": "By the time I arrive the fire has been going for an hour. It is a shallow pit in a dirt floor, fed by a length of blue plastic pipe running to an electric blower that used to be a car part. Pak Rusdi sits on his heels beside it with a glass of tea going cold on the ground, watching a disc of bronze the size of a dinner plate change colour. Nobody speaks. There is a smell of charcoal and clove cigarettes and the sweet, faintly metallic air of a room where the same thing has been burning for eighty years." },
+        { "type": "paragraph", "text": "The building is open on two sides. Chickens come and go. A calendar from a fertiliser company hangs above the anvil, four years out of date, and beneath it a row of hammers with handles worn into the shape of particular hands — his father's, his uncle's, his own. The roof is tin. When it rains, work stops, not because the rain matters but because nobody can hear the metal." },
+        { "type": "paragraph", "text": "A gong is made by heating a bronze blank until it glows the colour of an egg yolk, then striking it — six men, in rotation, in a rhythm that never varies — and heating it again, and striking it again, perhaps forty times, over three days. The alloy is ten parts copper to three parts tin, which is a brittle, unforgiving mixture that cracks if it is worked cold and slumps if it is worked hot. The window between those two failures is about ninety seconds long. Pak Rusdi has never used a thermometer. He watches the colour, and when it is right he lifts his chin, and the hammers start." },
+        { "type": "pullquote", "text": "“You are not making a shape. You are making a sound. The shape is only where the sound has to live.”", "attribution": "Pak Rusdi" },
+        { "type": "paragraph", "text": "I ask him, through Ratna, how long it takes to learn to see the colour. He thinks about it for a while, and then says something that she translates as: about as long as it takes to stop being afraid of the fire. Later she tells me she softened it. What he actually said was closer to: you learn it when you stop thinking about yourself." },
+        { "type": "subhead", "text": "Four generations, one room" },
+        { "type": "paragraph", "text": "The foundry was started by his great-grandfather, who was given the tools by the smith he had worked for and no money at all. The family has made instruments for court gamelan, for village ensembles, for schools, for a Dutch collector who came twice and then stopped coming, and — for one strange year in the nineteen-nineties — for a hotel chain that wanted decorative gongs that did not need to be in tune. Rusdi's father took that work. Rusdi has never mentioned it without laughing, and has never quite forgiven it either." },
+        { "type": "figure", "src": "/images/densho/001-indonesia/story-01.jpg", "alt": "An older man's hands holding a hammer with a worn wooden handle.", "tone": 2, "ratio": "3x2", "caption": "The hammer his father used. The handle has been replaced twice; the head, never.", "layout": "wide" },
+        { "type": "paragraph", "text": "There are six men working when I visit, and four of them are family. His son Bayu is thirty-one. He did two years of an engineering diploma in Semarang and came home, and he is careful to describe this as a choice rather than a failure, and equally careful never to say it in front of his father. He handles the orders now, and the phone, and a modest Instagram account with photographs he takes on his own phone between heats. He is also, by common agreement in the room, the second-best pair of eyes at the fire." },
+        { "type": "paragraph", "text": "What strikes me over the days is how little of the knowledge is spoken. Nobody explains anything. Bayu learned the rhythm of the hammers by standing in the line since he was nine, holding the lightest one, hitting nothing in particular. The correction, when it comes, is a hand on a shoulder, or a single syllable, or a pause. On the fourth morning I watch Pak Rusdi stop a heat by simply not lifting his chin. Nobody asks why. The bronze goes back into the coals and the room resets itself around his silence." },
+        { "type": "paragraph", "text": "Tuning happens at the end, in a smaller room, and it is the only part of the process that is quiet. The gong is hung from a frame. Rusdi strikes it with a padded mallet, listens with his whole body — head tilted, eyes somewhere on the floor — and then scrapes a little metal from the inside of the rim with a chisel and strikes it again. A gamelan is not tuned to any fixed pitch. Each set is tuned to itself, which means that every ensemble in Java is very slightly, deliberately, out of tune with every other one. An instrument made here will only ever sound completely right beside its own siblings." },
+        { "type": "pullquote", "text": "Every set is tuned to itself. Which means every gamelan in Java is a family that cannot be married into.", "attribution": "Field note, day six" },
+        { "type": "subhead", "text": "What is actually being handed down" },
+        { "type": "paragraph", "text": "Halfway through the trip I spend two days in Kauman, in the north of the city, with Ibu Sri, who makes batik tulis — drawn by hand with a canting, a small copper spout on a bamboo handle, one line of hot wax at a time. A cloth takes her between three weeks and four months. Two streets away, printed batik comes off a roller in seconds and sells for a twentieth of the price, and she is entirely unsentimental about this. Printed cloth is fine, she says. It is just not the same object. Then she goes back to work and does not look up for two hours." },
+        { "type": "paragraph", "text": "She and Rusdi have never met. They would probably not have much to say to each other. But they hold the same posture toward the thing they do — a kind of unhurried, unromantic attention that assumes the work will outlast the worker, and that this is the ordinary condition of a life rather than a tragedy." },
+        { "type": "paragraph", "text": "On the last morning the finished gong is carried out into the yard to cool, and for a few minutes it sits in the light looking like nothing at all: a dull, pitted, greenish disc, unbeautiful, still too hot to touch. Bayu strikes it once with the flat of his hand, not hard, mostly out of habit. The note goes out across the yard and over the wall and into the street, and three or four people out there do not turn around, because in this part of Solo that sound has been ordinary for four generations." },
+        { "type": "paragraph", "text": "That, in the end, is the thing I came for and did not expect: not the fire, not the skill, but the ordinariness. The devotion is total and nobody in the room would ever use the word. They would say it is simply what the family does. Which is, I think, the same thing said more honestly." }
+      ]
+    },
+    {
+      "type": "moments",
+      "items": [
+        {
+          "place": "Semanggi",
+          "time": "04:40",
+          "text": "Before the blower is switched on there are perhaps ninety seconds in which the fire is completely silent. Six men standing around a hole in the ground in the dark, waiting, none of them talking. It is the most religious thing I have seen in a long time and no one there would call it that."
+        },
+        {
+          "place": "The forge",
+          "time": "Day two",
+          "text": "Rusdi's grandson, who is seven, is allowed to be in the room but not near the fire. He spends the entire morning hitting a broken bicycle wheel with a stick, in perfect time with the hammers. Nobody has told him to. Nobody stops him.",
+          "kind": "observation"
+        },
+        {
+          "quote": "“The fire is not dangerous. Being in a hurry is dangerous.”",
+          "attribution": "Pak Rusdi, when I stood too close",
+          "kind": "quote"
+        },
+        {
+          "place": "Kauman",
+          "time": "Day seven",
+          "text": "Ibu Sri holds the canting the way other people hold a cigarette they have forgotten about. The wax must be hot enough to flow and cool enough not to spread; she keeps it in range by blowing on the spout, twice, between every line. Over four months that is perhaps forty thousand small breaths spent on one cloth."
+        },
+        {
+          "quote": "“My daughter can do this. She does not want to do this. Both things are fine.”",
+          "attribution": "Ibu Sri",
+          "kind": "quote"
+        },
+        {
+          "place": "Pasar Triwindu",
+          "time": "Day nine",
+          "text": "A dealer in the antiques market has a single old gong hung at the back of his stall, cracked, unsellable. He hits it for me anyway. The note is flat and short and ugly, and he grins at it with real affection, the way you would at a dog that has gone deaf."
+        },
+        {
+          "place": "The yard",
+          "time": "Last morning",
+          "text": "Asked what happens to the workshop when he stops, Rusdi says: Bayu. Asked what happens after Bayu, he says a sentence Ratna does not translate immediately. Then: “That is not a question for me. I only have to not be the one who dropped it.”"
+        }
+      ]
+    },
+    {
+      "type": "images",
+      "note": "Eleven days. Java, March.",
+      "items": [
+        { "src": "/images/densho/001-indonesia/img-01.jpg", "alt": "The interior of the forge before dawn, lit only by coals.", "tone": 6, "ratio": "3x2", "layout": "full", "caption": "04:12. The blower is not yet on." },
+        { "src": "/images/densho/001-indonesia/img-02.jpg", "alt": "A man's forearm and hand resting on the handle of a sledgehammer.", "tone": 2, "ratio": "4x5", "layout": "inset", "caption": "Waiting for the chin to lift." },
+        { "src": "/images/densho/001-indonesia/img-03.jpg", "alt": "Six men in a circle striking a disc of glowing bronze.", "tone": 5, "ratio": "3x2", "layout": "wide", "caption": "Forty strikes to a heat, three days to a gong." },
+        { "src": "/images/densho/001-indonesia/img-04.jpg", "alt": "Charcoal, tongs and a glass of tea on a dirt floor.", "tone": 1, "ratio": "1x1", "layout": "pair", "caption": "Tea, going cold." },
+        { "src": "/images/densho/001-indonesia/img-05.jpg", "alt": "A row of hammers leaning against a soot-blackened wall.", "tone": 3, "ratio": "1x1", "layout": "pair", "caption": "Handles worn to particular hands." },
+        { "src": "/images/densho/001-indonesia/img-06.jpg", "alt": "Bayu sitting in the doorway of the workshop with a phone in his hand.", "tone": 2, "ratio": "3x2", "layout": "wide", "caption": "Bayu, between heats. The orders come by phone now." },
+        { "src": "/images/densho/001-indonesia/img-07.jpg", "alt": "A finished gong hanging from a wooden frame in a dark room.", "tone": 6, "ratio": "4x5", "layout": "inset", "caption": "The tuning room, which is the only quiet room." },
+        { "src": "/images/densho/001-indonesia/img-08.jpg", "alt": "Ibu Sri drawing hot wax onto stretched cloth with a canting.", "tone": 4, "ratio": "3x2", "layout": "full", "caption": "Kauman. One line of wax, then two breaths on the spout." },
+        { "src": "/images/densho/001-indonesia/img-09.jpg", "alt": "Detail of a half-finished batik cloth, wax lines against undyed cotton.", "tone": 1, "ratio": "1x1", "layout": "pair", "caption": "Three weeks in. Perhaps four months to go." },
+        { "src": "/images/densho/001-indonesia/img-10.jpg", "alt": "Indigo-stained hands resting on a bench.", "tone": 3, "ratio": "1x1", "layout": "pair", "caption": "The dye does not come off. It only fades." },
+        { "src": "/images/densho/001-indonesia/img-11.jpg", "alt": "The finished gong cooling in the yard in flat morning light.", "tone": 4, "ratio": "3x2", "layout": "full", "caption": "Unbeautiful, still too hot to touch, entirely finished." }
+      ]
+    },
+    {
+      "type": "field-notes",
+      "note": "Written at the time, mostly badly, in a notebook that smells of charcoal.",
+      "items": [
+        {
+          "date": "10 March",
+          "place": "Solo — arrival",
+          "lines": [
+            "Overnight from Jakarta. Arrived with the idea that I was here to photograph objects. Spent the first afternoon being fed and asked about my family and photographing nothing.",
+            "Rusdi asked how long I was staying. When I said eleven days he looked relieved, which I did not understand until later. Apparently the last people who came stayed for four hours."
+          ]
+        },
+        {
+          "date": "11 March",
+          "place": "The forge",
+          "lines": [
+            "04:00. Colder than expected. Nobody explains anything and I have decided not to ask for two days.",
+            "The noise is not what I thought. It is not a clang. It is closer to a dull double thud, and the sound arrives in the chest before the ears.",
+            "Shot almost nothing. Right, I think."
+          ]
+        },
+        {
+          "date": "13 March",
+          "place": "The forge",
+          "lines": [
+            "Third morning and someone handed me a glass of tea without looking up, which felt like being admitted to something.",
+            "Realised I have been photographing the fire because the fire is dramatic. The fire is the least interesting thing in this room. The interesting thing is the ninety seconds before it.",
+            "Note for the edit: no orange. Kill the orange."
+          ]
+        },
+        {
+          "date": "15 March",
+          "place": "Kauman",
+          "lines": [
+            "Two days with Ibu Sri. Completely different tempo. In the forge everything is decided in seconds; here nothing is decided in less than a week.",
+            "She works with the radio on, a talk station, and occasionally argues with it.",
+            "Asked whether it is frustrating that people cannot tell the difference between her cloth and a printed one. She said: they can tell. They just do not always care. Which is not the same problem."
+          ]
+        },
+        {
+          "date": "18 March",
+          "place": "Semanggi",
+          "lines": [
+            "Bayu, unprompted, over lunch: “My father thinks I am here because he needs me. I am here because I want to be the one who does it.” Then immediately changed the subject.",
+            "That is the entire story and I nearly missed it because I was eating."
+          ]
+        },
+        {
+          "date": "20 March",
+          "place": "Last morning",
+          "lines": [
+            "Gong finished and carried into the yard. Bayu hit it with his hand, not for me, out of habit.",
+            "Nobody in the street turned around.",
+            "Leaving with far fewer photographs than I expected and a much better idea of what the series is actually about."
+          ]
+        }
+      ]
+    }
+  ]
+}

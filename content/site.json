@@ -1,0 +1,72 @@
+{
+  "title": "BEARINGS",
+  "tagline": "Stories about people who have found their own way of being in the world.",
+  "description": "An independent editorial project about people who have chosen to dedicate their lives to something they deeply believe in.",
+  "basePath": "",
+  "navigation": [
+    { "label": "Bearings", "href": "/" },
+    { "label": "Series", "href": "/series/" },
+    { "label": "About", "href": "/about/" }
+  ],
+  "home": {
+    "statement": "Stories about people who have found their own way of being in the world.",
+    "introduction": [
+      "BEARINGS is a collection of stories about people who have chosen to dedicate their lives to something they deeply believe in. Craftsmen, climbers, musicians, photographers, designers, chefs, builders, artists. Different lives, moved by the same devotion.",
+      "The work is organised into series — ongoing bodies of work, each following a particular world, practice or way of living. Photography, writing, film, sound and field notes are the tools. The object is rarely the story. The person always is."
+    ],
+    "featured": {
+      "series": "densho",
+      "entry": "001-indonesia",
+      "note": "Current"
+    },
+    "closing": "New entries are added as the work is made. There is no schedule."
+  },
+  "seriesIndex": {
+    "title": "Series",
+    "standfirst": "Different worlds, practices and ways of living.",
+    "introduction": [
+      "Each series is an ongoing body of work. It gathers slowly, one entry at a time, and it is not finished until the interest in it is. Entries are numbered within their series rather than across the project — 001 belongs to the series, not to Bearings."
+    ]
+  },
+  "about": {
+    "title": "About",
+    "standfirst": "An independent editorial project about devotion, and the lives built around it.",
+    "manifesto": [
+      "BEARINGS is a collection of stories about people who have found their own way of being in the world.",
+      "I am fascinated by people who have chosen to dedicate their lives to something they deeply believe in.",
+      "People worth remembering. Not because of what they have achieved, but because of how they have chosen to live.",
+      "Different lives. Moved by the same devotion.",
+      "Whether they are making, creating or exploring, I am drawn to those who could not imagine doing anything else.",
+      "I don't want to tell the story of what they make.",
+      "I want to understand why they make it.",
+      "Because objects, songs, mountains and paintings are only traces of something deeper — a way of living.",
+      "This is my way of observing, understanding and sharing those lives."
+    ],
+    "name": {
+      "label": "On the name",
+      "text": [
+        "To get your bearings means to pause, look around and understand where you are before moving forward.",
+        "A bearing is also the way someone carries themselves through the world.",
+        "BEARINGS exists somewhere between those two meanings."
+      ]
+    },
+    "method": {
+      "label": "Method",
+      "text": [
+        "The work is made slowly and at close range. Time is spent before anything is recorded — days in a workshop, on a wall, in a kitchen — until the presence of a camera stops being an event.",
+        "Photography is one tool among several. Writing, video, sound, interviews and field notes are used wherever they serve the story better. Each entry is built from whichever forms of documentation the experience actually produced, which is why no two entries are structured the same way."
+      ]
+    },
+    "colophon": {
+      "label": "Colophon",
+      "text": [
+        "Written, photographed and published independently. Set in Fraunces and Newsreader, with Archivo for metadata.",
+        "For enquiries, collaborations and archive requests: hello@bearings.example"
+      ]
+    }
+  },
+  "footer": {
+    "note": "An independent editorial project.",
+    "copyright": "All photographs and text © BEARINGS."
+  }
+}

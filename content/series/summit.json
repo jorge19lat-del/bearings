@@ -1,0 +1,36 @@
+{
+  "slug": "summit",
+  "name": "SUMMIT",
+  "subtitle": "Extreme sports.",
+  "status": "In progress",
+  "began": "2026",
+  "order": 2,
+  "standfirst": "People who have organised their lives around ground that gives nothing back.",
+  "introduction": [
+    "SUMMIT follows climbers, alpinists, skiers and the people who spend their lives close to mountains — not for the summits themselves, but for what the pursuit of them asks of a life. The training, the waiting, the weather, the money, the friends who did not come back.",
+    "The series is being made now. Entries will appear here as the work is finished."
+  ],
+  "cover": {
+    "src": "/images/summit/cover.jpg",
+    "alt": "A figure standing at the edge of a snowfield in flat afternoon light.",
+    "tone": 1,
+    "ratio": "4x5",
+    "note": "Series cover — figure on snowfield"
+  },
+  "forthcoming": [
+    {
+      "number": "001",
+      "title": "Untitled",
+      "location": "—",
+      "note": "Fieldwork under way.",
+      "status": "In progress"
+    },
+    {
+      "number": "002",
+      "title": "Untitled",
+      "location": "—",
+      "note": "In preparation.",
+      "status": "Planned"
+    }
+  ]
+}
