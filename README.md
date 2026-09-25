@@ -3,9 +3,10 @@
 An independent editorial project. Stories about people who have found their own way
 of being in the world.
 
-The site is a small static publication: plain HTML, CSS and a little JavaScript,
-generated from the editorial content in `/content`. There is no framework and there
-are no dependencies, so it will still build in five years.
+The site is a Next.js (App Router) project deployed on Vercel. Every page is
+pre-rendered at build time from the editorial content in `/content` and served
+from Vercel's edge cache; the only JavaScript on the page is the framework and a
+few lines of behaviour.
 
 ```
 BEARINGS
@@ -19,35 +20,45 @@ BEARINGS
 ## Running it
 
 ```bash
-npm run build     # content + templates → /dist
-npm run serve     # preview /dist at http://localhost:4321
-npm run dev       # both
+npm install
+npm run dev       # http://localhost:3000
+npm run build     # production build — every route is static
+npm run start     # serve the production build
+npm run lint      # type check
 ```
 
-`/dist` is generated and is not committed — it is built on publish.
-
 ---
 
-## Publishing
+## Publishing (Vercel)
 
-`.github/workflows/pages.yml` builds the site and publishes it to GitHub Pages on
-every push. It needs one setting, once:
+The project is linked to this repository on Vercel. Every push builds a preview
+deployment; the production branch deploys to production. Nothing needs to be
+configured for the build — Vercel detects Next.js.
 
-> **Settings → Pages → Build and deployment → Source: GitHub Actions**
+**Environment variables** are managed in Vercel (Project → Settings → Environment
+Variables), never in the repository. See `.env.example` for the list:
 
-Without that, GitHub serves the repository's files directly and a visitor sees this
-README rather than the site.
+| Variable               | Purpose                                                                 |
+| ---------------------- | ----------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical address, e.g. `https://bearings.example`. Optional: without it the site uses Vercel's production domain. |
 
-The workflow asks GitHub Pages where the site will live and builds it for that
-address, so it works both at a domain root and at `…github.io/bearings/`. Nothing
-in the content needs to change if a custom domain is added later.
+**Adding a domain later:** Vercel → Project → Settings → Domains → add the domain
+and follow the DNS instructions. HTTPS certificates are issued automatically.
+Then set `NEXT_PUBLIC_SITE_URL` to the new address and redeploy, so canonical
+URLs, Open Graph tags, `sitemap.xml` and `robots.txt` all point at it.
 
-To publish anywhere else (Netlify, Vercel, Cloudflare Pages, a folder on a server),
-run `npm run build` and upload `/dist`. If that host serves the site from a
-sub-folder, build with `BASE_PATH=/sub-folder npm run build`, or set
-`"basePath": "/sub-folder"` in `content/site.json`.
+### What the platform and the config provide
 
----
+- **Performance** — static pre-rendering, edge CDN caching, automatic code
+  splitting, inlined critical CSS, preloaded self-hosted fonts, and Vercel image
+  optimisation (AVIF/WebP, responsive sizes, lazy loading) for every photograph.
+- **Security** — automatic HTTPS; `next.config.ts` sets Content-Security-Policy,
+  HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy,
+  Permissions-Policy and COOP on every response. There are no forms and no user
+  input. Preview deployments are excluded from search engines.
+- **SEO** — per-page titles, descriptions and canonical URLs, Open Graph and
+  Twitter cards (a generated share image), JSON-LD on entries, `sitemap.xml`,
+  `robots.txt`, clean URLs and one `h1` per page with an ordered heading hierarchy.
 
 ## The content model
 
@@ -134,7 +145,8 @@ shown beside the heading.
 ```
 
 To invent a new form of documentation, add one entry to `SECTION_TYPES` in
-`src/sections.mjs` — a label and a render function. Nothing else in the site needs
+`components/sections.tsx` — a label and a render function — and its shape to the
+`Section` type in `lib/content.ts`. Nothing else in the site needs
 to know about it.
 
 ### Images
@@ -153,8 +165,9 @@ to know about it.
 
 Photographs go in `/public/images/…`, matching `src`. **A missing file is not an
 error**: the slot is held open at the right proportion with its brief, so the page
-keeps its rhythm. Drop the file in, rebuild, and the picture appears. `npm run build`
-lists every slot still waiting.
+keeps its rhythm. Drop the file in, push, and the picture appears — served through
+Vercel's image optimisation in AVIF or WebP at the size each screen needs. Upload
+large originals (2400–3000 px on the long side); resizing is automatic.
 
 Layouts: `full` runs edge to edge, `wide` sits inside the page margins, `inset` is
 small and surrounded by space (alternating side to side), and consecutive `pair`
@@ -172,7 +185,7 @@ images are set two across.
 | Paper | `#f2eee6` warm off-white |
 | Ink | `#17140f` near-black, with two warm greys |
 
-All of it is declared as custom properties at the top of `src/styles/bearings.css`.
+All of it is declared as custom properties at the top of `app/styles/bearings.css`.
 Changing the palette or the type is a handful of lines there.
 
 ---
@@ -188,15 +201,21 @@ in it are invented. Replace it with your own reporting before the site is publis
 ## Structure
 
 ```
-build.mjs            Reads /content, writes /dist
-serve.mjs            Preview server
 content/             The editorial content — the only thing you normally edit
-public/              Photographs, video, audio, favicon
-src/
-├── layout.mjs       Page shell: masthead, navigation, colophon
-├── sections.mjs     The section registry — every form of documentation
-├── components.mjs   Figures, rules, metadata lists
-├── pages/           Home, series index, series, entry, about
-├── styles/
-└── scripts/
+public/              Photographs, video, audio, typefaces
+app/
+├── layout.tsx       Page shell: masthead, navigation, colophon, metadata
+├── page.tsx         Home
+├── series/          Series index, each series, each entry
+├── about/           About
+├── sitemap.ts       sitemap.xml
+├── robots.ts        robots.txt
+├── opengraph-image.tsx  Share card
+└── styles/          Typefaces and the stylesheet
+components/
+├── sections.tsx     The section registry — every form of documentation
+├── Figure.tsx       Photographs, rules, metadata lists
+└── client.tsx       Navigation state and the small amount of behaviour
+lib/content.ts       Reads /content and relates entries to their series
+next.config.ts       Security headers, caching, image settings
 ```
